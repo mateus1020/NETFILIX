@@ -1,17 +1,19 @@
 let botaoSom = document.querySelector(".botao-som");
 let video = document.querySelector(".som-video");
-let botao = document.querySelector(".link-informacao");
+let botao1 = document.querySelector(".link-informacao");
 let modal = document.querySelector(".modal");
+let tudum = document.querySelector(".audio");
+let botao2 = document.querySelector(".link-assistir");
 
 // LIGA O SOM
 botaoSom.addEventListener("click", ligaSom);
 
 function ligaSom() {
-  video.muted = false;
+  video.muted = !video.muted;
 }
 
 // MOSTRA O MODAL
-botao.addEventListener("click", mostrarModal);
+botao1.addEventListener("click", mostrarModal);
 modal.addEventListener("click", esconderModal);
 
 function mostrarModal() {
@@ -20,4 +22,9 @@ function mostrarModal() {
 
 function esconderModal() {
   modal.style.display = "none";
+}
+
+botao2.addEventListener("click", tocarAudio);
+function tocarAudio() {
+  tudum.play();
 }
